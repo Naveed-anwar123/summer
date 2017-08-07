@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
@@ -16,9 +17,11 @@ class MarkDownEmails extends Mailable
      *
      * @return void
      */
-    public function __construct()
+    public $user;
+    public function __construct(User $user)
     {
         //
+        $this->user = $user;
     }
 
     /**
@@ -28,6 +31,6 @@ class MarkDownEmails extends Mailable
      */
     public function build()
     {
-        return $this->markdown('markdown.users.template');
+        return $this->from('example@gmail.com')->markdown('markdown.users.template');
     }
 }

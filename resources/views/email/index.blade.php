@@ -1,9 +1,6 @@
 @extends('layouts.master')
-
 @section('email')
-
     <h1>Send Email</h1>
-
     <div class="container-fluid row">
         {!! Form::open(['method'=>'post','action'=>'EmailController@store']) !!}
 

@@ -50,6 +50,8 @@
                              <li>   <a href="{{url('/blogs')}}">Blog</a></li>
                             <li><a href="{{url('/blogs/create')}}">Add Post</a></li>
                             <li><a href="{{url('/sendEmail')}}">Send Email</a></li>
+                            <li><a href="{{url('/markdown')}}">Markdown</a></li>
+                            <li><a href="{{url('/slack')}}">Notification</a></li>
 
 
                         @endif
@@ -59,7 +61,7 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                      we      <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

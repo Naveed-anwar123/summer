@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -37,7 +38,7 @@ class RegisterController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest');
+        $this->middleware(['guest','ref']);
     }
 
     /**
@@ -66,11 +67,15 @@ class RegisterController extends Controller
         $fname = Input::file('file')->getClientOriginalName();
         Input::file('file')->move('profile', $fname);
 
+        $referred_by = Cookie::get('referral');
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
             'file' => $fname,
+            'affiliate_id' =>str_random(11),
+            'referral_id' => $referred_by
         ]);
     }
 

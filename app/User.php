@@ -14,8 +14,11 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $events = [
+      'created' => Events\NewUserEvent::class
+    ];
     protected $fillable = [
-        'name', 'email', 'password','file'
+        'name', 'email', 'password','file' , 'referral_id','affiliate_id'
     ];
 
     /**
@@ -54,4 +57,11 @@ class User extends Authenticatable
         }
         return false;
     }
+
+    public function routeNotificationForSlack()
+    {
+        return 'https://hooks.slack.com/services/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';
+
+    }
+
 }

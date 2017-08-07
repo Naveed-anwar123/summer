@@ -206,3 +206,59 @@ Route::get('mail',function(Request $request , Mailer $mailer){
     //$data=['title'=>'Laravel'];
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+Route::get('markdown',function(){
+
+    Mail::to("naveedanwar152@gmail.com")->send(new \App\Mail\MarkDownEmails());
+    return redirect()->route('home');
+
+});
+
+Route::get('slack',function(){
+    $user = Auth::user();
+    $user->notify(new \App\Notifications\AccountCreated());
+});
+
+
+
+
+
+
+
+
+
+
+
+
+Route::get('req',function(Request $request){
+   // echo  redirect($request->fullUrl())->withCookie(cookie()->forever('check', $request->query('ref')));
+    //print_r( $request->getClientIps());
+
+});
+
+// 1- First of all got slack and youteam/apps search for incomming
+// 2- php artisan make:notification abc
+// 3- via['slack']
+// 4- toslcack method return( new SlackMessage)->success()->content();
+// 5- insinde User model write public function RouteNotificaionForSlack returns that hook
+// 6- $user->notify(new abc());
+// 7- and thats it
+
+
+
+
+
+
+

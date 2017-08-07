@@ -14,7 +14,14 @@
                     <div class=" col-md-2">
                         <img src="profile/{{Auth::user()->file}}" class="img-responsive img-circle" >
                     </div>
+                    <div class=" col-md-2">
 
+                    @if(Auth::user()->affiliate_id)
+                        <input type="text" readonly="readonly"
+                               value="{{url('register').'/?ref='.Auth::user()->affiliate_id}}">
+                    @endif
+
+                    </div>
 
                 </div>
             </div>

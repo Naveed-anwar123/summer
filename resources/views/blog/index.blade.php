@@ -8,7 +8,7 @@
     <div class="col-md-12">
         <div class="post-style10">
             <div class="post-thumb10">
-                <a href="#" title=""><img src="profile/{{$single->file}}" alt="" /></a>
+                <a href="#" title=""><img src="profile/{{$single->file}}" alt="" width="400px" height="400px" /></a>
             </div>
             <div class="post-detail10">
                 <div class="post-author-share-post">
@@ -38,7 +38,7 @@
                     <a href="#" title="">{{$single->created_at->diffForHumans()}}</a>
                 </div>
                 <h2><a href="#" title="">{{$single->title}}</a></h2>
-                <p>{{$single->body}}</p>
+                <p>{{ $single->body}}</p>
             </div>
         </div><!-- post style 10 -->
     </div>
