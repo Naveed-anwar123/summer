@@ -33,7 +33,8 @@ class MyMailTwo extends Mailable
     public function build()
     {
 
-        return $this->from('naveed@example.com')->view('email.templateTwo');
+      //  return $this->from($this->request->semail)->view('email.templateTwo');
+        return $this->view('email.templateTwo');
 
     }
 }

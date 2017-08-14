@@ -14,14 +14,19 @@
                     <div class=" col-md-2">
                         <img src="profile/{{Auth::user()->file}}" class="img-responsive img-circle" >
                     </div>
-                    <div class=" col-md-2">
+                    <div class=" col-md-8">
 
                     @if(Auth::user()->affiliate_id)
                         <input type="text" readonly="readonly"
                                value="{{url('register').'/?ref='.Auth::user()->affiliate_id}}">
                     @endif
-
                     </div>
+                    <br><br><br>
+                        <div class=" col-md-8">
+                            {{--<h4>Your last login time is {{date('d F Y h:m A',strtotime(Auth::user()->last_login))}}</h4>--}}
+                            <h4>Your last login time is {{Auth::user()->last_login}}</h4>
+                        </div>
+
 
                 </div>
             </div>

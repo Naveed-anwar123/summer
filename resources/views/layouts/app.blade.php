@@ -52,6 +52,8 @@
                             <li><a href="{{url('/sendEmail')}}">Send Email</a></li>
                             <li><a href="{{url('/markdown')}}">Markdown</a></li>
                             <li><a href="{{url('/slack')}}">Notification</a></li>
+                            <li><a href="{{url('/forums')}}">Forum</a></li>
+                            <li><a href="{{url('/forums/create')}}">Start discussion</a></li>
 
 
                         @endif
@@ -88,12 +90,14 @@
             </div>
         </nav>
         @yield('content')
+        @yield('discussion')
 
         </div>
 
     <!-- Scripts -->
 
-    <script src="{{ asset('css/jquery-1.11.1.js') }}"></script>
-    <script src="{{ asset('css/bootstrap.js') }}"></script>
+    <script src="{{ asset('../css/jquery-1.11.1.js') }}"></script>
+    <script src="{{ asset('../css/bootstrap.js') }}"></script>
+
 </body>
 </html>

@@ -91,6 +91,8 @@
                         @yield('topic')
                         @yield('email')
                         @yield('blog')
+
+
                     </div>
                 </div>
             </div>

@@ -64,4 +64,12 @@ class User extends Authenticatable
 
     }
 
+    public function mytopics()
+    {
+        return $this->hasMany('App\Topic','user_id','id');
+    }
+    public function myreplies()
+    {
+        return $this->hasMany('App\Reply','user_id','id');
+    }
 }

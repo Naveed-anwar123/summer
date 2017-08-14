@@ -259,6 +259,9 @@ Route::get('req',function(Request $request){
 
 
 
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
 
-
+Route::resource('forums','ForumController');
+Route::resource('reply','ReplyControler');
 

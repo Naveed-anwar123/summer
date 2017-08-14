@@ -2,6 +2,7 @@
 
 namespace App\Mail;
 
+use App\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
@@ -17,7 +18,7 @@ class MyMail extends Mailable
      *
      * @return void
      */
-    public function __construct($user)
+    public function __construct(User $user)
     {
         //
 		$this->user =$user;
@@ -30,6 +31,6 @@ class MyMail extends Mailable
      */
     public function build()
     {
-		return $this->from('salmanjaved285@gmail.com')->view('email.template');
+		return $this->from($this->user->email)->view('email.template');
     }
 }

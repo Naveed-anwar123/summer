@@ -39,7 +39,7 @@ class EmailController extends Controller
     {
         //
 
-        $mailer->to('naveedanwar152@gmail.com')->send(new \App\Mail	\MyMailTwo($request));
+        $mailer->to($request->remail)->send(new \App\Mail	\MyMailTwo($request));
 
 //        Mail::send('email.template',compact('$request'),function($message) use ($request){
 //

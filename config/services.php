@@ -34,5 +34,14 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+    'facebook' => [
+        'client_id' => '303832763353676',
+        'client_secret' => '373c6b1adc4f3c25d1f6edd407c0a83a',
+        'redirect' => 'http://summer.co/login/facebook/callback',
+    ],
 
+//    'paypal' => [
+//        'client_id' => 'paypal_client_id',
+//        'secret' => 'paypal_secret'
+//    ],
 ];
